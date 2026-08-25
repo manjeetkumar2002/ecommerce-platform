@@ -1,0 +1,595 @@
+# ============================================
+# ROOT LEVEL IGNORES
+# ============================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.iml
+.vscode-test/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+pm2-*.log
+
+# ============================================
+# SERVER (BACKEND) IGNORES
+# ============================================
+
+# Dependency directories
+server/node_modules/
+server/node_modules/.bin
+server/node_modules/.cache
+
+# Build outputs
+server/dist/
+server/build/
+server/.next/
+server/out/
+
+# Server specific
+server/.env
+server/.env.local
+server/.env.*.local
+server/coverage/
+server/.nyc_output/
+server/uploads/
+server/temp/
+server/tmp/
+server/data/
+server/logs/
+
+# Server test coverage
+server/coverage/
+server/.nyc_output/
+
+# Server debug logs
+server/npm-debug.log*
+server/yarn-debug.log*
+server/yarn-error.log*
+
+# Server package manager locks (choose one)
+server/package-lock.json
+server/yarn.lock
+server/pnpm-lock.yaml
+
+# Server TypeScript
+server/*.tsbuildinfo
+server/tsconfig.tsbuildinfo
+
+# ============================================
+# CLIENT (FRONTEND) IGNORES
+# ============================================
+
+# Dependency directories
+client/node_modules/
+client/node_modules/.bin
+client/node_modules/.cache
+
+# Build outputs
+client/build/
+client/dist/
+client/.next/
+client/out/
+client/.cache/
+
+# Client environment files
+client/.env
+client/.env.local
+client/.env.*.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+
+# Client specific
+client/coverage/
+client/.nyc_output/
+client/public/uploads/
+client/temp/
+client/tmp/
+client/.eslintcache
+
+# Client debug logs
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/*.log
+
+# Client package manager locks (choose one)
+client/package-lock.json
+client/yarn.lock
+client/pnpm-lock.yaml
+
+# Client TypeScript
+client/*.tsbuildinfo
+client/tsconfig.tsbuildinfo
+client/src/service-worker.js
+client/src/service-worker.d.ts
+client/src/*.js.map
+client/src/*.d.ts
+
+# Client testing
+client/coverage/
+client/.nyc_output/
+
+# Client development files
+client/.env.development
+client/.env.production
+
+# ============================================
+# DOCKER IGNORES
+# ============================================
+
+docker/
+*.pid
+*.seed
+*.pid.lock
+*.container
+*.image
+docker-compose.override.yml
+docker-compose.*.yml
+
+# ============================================
+# DATABASE IGNORES
+# ============================================
+
+*.db
+*.sqlite
+*.sqlite3
+*.mongo
+*.mongodb
+*.dump
+*.backup
+
+# MongoDB data
+data/
+db-data/
+mongodb-data/
+
+# PostgreSQL data
+postgres-data/
+pgdata/
+
+# Redis data
+redis-data/
+*.rdb
+*.aof
+
+# ============================================
+# MISC IGNORES
+# ============================================
+
+# Backup files
+*.bak
+*.backup
+*.tmp
+*.temp
+*.cache
+*.swp
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Certificate files
+*.pem
+*.crt
+*.key
+*.cert
+*.p12
+*.pfx
+
+# Secret files
+secrets/
+keys/
+*.pem
+*.key
+*.crt
+*.cert
+
+# Configuration files (user-specific)
+*.local
+*.user
+*.user.*
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.tgz
+
+# ============================================
+# CI/CD IGNORES
+# ============================================
+
+.github/
+.gitlab/
+.azure/
+.aws/
+.circleci/
+.travis.yml
+.jenkins/
+.gitlab-ci.yml
+.github/workflows/
+
+# ============================================
+# NPM / YARN / PNPM IGNORES
+# ============================================
+
+node_modules/
+.npm/
+.yarn/
+.pnpm-store/
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# ============================================
+# TESTING IGNORES
+# ============================================
+
+coverage/
+.nyc_output/
+*.test.js
+*.spec.js
+__tests__/
+__mocks__/
+*.snap
+*.snapshots
+
+# ============================================
+# PERFORMANCE & OPTIMIZATION
+# ============================================
+
+.cache/
+.parcel-cache/
+.webpack/
+.eslintcache
+.stylelintcache
+.prettiercache
+
+# ============================================
+# SECURITY & SENSITIVE DATA
+# ============================================
+
+*.p12
+*.pfx
+*.pem
+*.key
+*.crt
+*.cert
+*.csr
+*.jks
+*.keystore
+*.truststore
+
+# ============================================
+# WEBPACK & BUNDLERS
+# ============================================
+
+dist/
+build/
+*.bundle.js
+*.bundle.js.map
+*.bundle.css
+*.bundle.css.map
+
+# ============================================
+# NEXT.JS SPECIFIC
+# ============================================
+
+.next/
+out/
+server/
+!server.js
+!server/index.js
+.next/build-manifest.json
+.next/prerender-manifest.json
+.next/server/
+.next/static/
+.next/cache/
+
+# ============================================
+# REACT SPECIFIC
+# ============================================
+
+/client/build
+/client/node_modules
+/client/.env.development.local
+/client/.env.test.local
+/client/.env.production.local
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+/client/sentry.properties
+
+# ============================================
+# EXPRESS / NODE SPECIFIC
+# ============================================
+
+/server/node_modules
+/server/.env
+/server/.env.local
+/server/.env.*.local
+/server/npm-debug.log*
+/server/yarn-debug.log*
+/server/yarn-error.log*
+
+# ============================================
+# MONGODB SPECIFIC
+# ============================================
+
+dump/
+mongodb-data/
+*.bson
+*.metadata.json
+/data/db
+
+# ============================================
+# REDIS SPECIFIC
+# ============================================
+
+dump.rdb
+appendonly.aof
+redis-data/
+
+# ============================================
+# CLOUD PROVIDER SPECIFIC
+# ============================================
+
+# AWS
+.aws/
+aws/
+*.pem
+*.crt
+*.key
+
+# Azure
+.azure/
+azure/
+
+# GCP
+.gcloud/
+google-cloud/
+
+# ============================================
+# SSL CERTIFICATES
+# ============================================
+
+*.crt
+*.pem
+*.key
+*.csr
+*.cert
+*.der
+*.p12
+*.pfx
+
+# ============================================
+# DEPENDENCY CHECK
+# ============================================
+
+.dependency-cache/
+.pnpm-debug.log
+yarn-error.log
+npm-debug.log
+lerna-debug.log
+
+# ============================================
+# MISCELLANEOUS
+# ============================================
+
+# Windows
+.thumbnails
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.directory
+*.pid
+*.lock
+*.seed
+
+# Android
+*.apk
+*.ap_
+*.dex
+*.class
+
+# iOS
+*.ipa
+*.xcodeproj/
+*.xcworkspace/
+
+# ============================================
+# PROJECT-SPECIFIC IGNORES
+# ============================================
+
+# Uploads directory (if not tracked)
+uploads/
+temp-uploads/
+public/uploads/
+client/public/uploads/
+
+# Reports
+reports/
+test-reports/
+coverage-reports/
+
+# Screenshots
+screenshots/
+*.png
+*.jpg
+*.jpeg
+
+# Database seeds (if containing sensitive data)
+seeds/
+seed-data/
+sample-data/
+fixtures/
+
+# User-uploaded files
+server/public/uploads/
+server/private/uploads/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+*.backup
+*.bak
+backup/
+backups/
+
+# Documentation (generated)
+docs/_build/
+docs/build/
+docs/output/
+docs/html/
+docs/latex/
+docs/man/
+docs/doctrees/
+
+# ============================================
+# .ENV FILES - KEEP SECURE!
+# ============================================
+
+# Environment variables (keep these secure)
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+!.env.dev-template
+
+# ============================================
+# DATABASE SCHEMA FILES
+# ============================================
+
+*.db.sql
+*.mysql
+*.postgres
+*.mongo
+*.sqlite
+
+# ============================================
+# COMPRESSED FILES
+# ============================================
+
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.bz2
+*.gz
+*.xz
+
+# ============================================
+# REMOVE THESE IF YOU WANT TO TRACK THEM
+# ============================================
+
+# Uncomment these lines if you want to track these files
+# !.env.example
+# !.gitkeep
+# !.dockerignore
+
+# ============================================
+# DEPLOYMENT BUILD FILES
+# ============================================
+
+# Vercel
+.vercel
+
+# Netlify
+.netlify
+
+# Heroku
+.heroku
+
+# Render
+.render
+
+# Railway
+.railway
+
+# ============================================
+# COVERAGE REPORTS
+# ============================================
+
+coverage/
+.nyc_output/
+lcov-report/
+coverage-final.json
+
+# ============================================
+# STORYBOOK IGNORES
+# ============================================
+
+storybook-static/
+.storybook-out/
+.storybook-dist/
+
+# ============================================
+# INTERNATIONALIZATION
+# ============================================
+
+messages/*.json
+!messages/en.json
+!messages/es.json
