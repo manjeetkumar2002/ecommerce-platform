@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
-const User = require("./src/models/User.models.js")
-const validate = require("./utils/validate.js")
-const genToken = require("./utils/genToken.js")
+const User = require("../models/User.model.js")
+const validate = require("../utils/validate.js")
+const genToken = require("../utils/genToken.js")
 const crypto = require("crypto")
 const register = async(req,res)=>{
     try {
@@ -66,9 +66,9 @@ const login = async(req,res)=>{
         
         // validating the data
         validate(email,password);
-
         // fetch the user 
-        const user =await  user.findOne({email:email});
+        const user = await User.findOne({email:email});
+       
         if(!user){
             return res.status(401).json({
                 message: "Invalid credentials"
