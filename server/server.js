@@ -9,8 +9,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use('/api/auth/',authRouter);
 
-const initializeConnection = ()=>{
-    connectDB();
+const initializeConnection = async ()=>{
+    await connectDB();
     app.listen(PORT,()=>{
         console.log(`Listening at port: ${PORT}`);
     })
