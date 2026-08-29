@@ -3,6 +3,7 @@ const User = require("../models/User.model.js")
 const validate = require("../utils/validate.js")
 const genToken = require("../utils/genToken.js")
 const crypto = require("crypto")
+const nodemailer = require("nodemailer");
 const register = async(req,res)=>{
     try {
         const {name,email,password} = req.body;
@@ -141,7 +142,7 @@ const forgetPassword = async(req,res)=>{
         // 2. Hash token and save in DB (security ke liye)
         user.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex"),
         // 3. Expiry Time (10 minutes)
-        user.resetPasswordExpire = Date.now() * 10*60*1000;
+        user.resetPasswordExpire = Date.now() + 10*60*1000;
         await user.save({validateBeforeSave:false});
         // 4. send mail
         const resetUrl = `${process.env.VITE_FRONTEND_URL}/reset-password/${resetToken}`; // Ye frontend ka URL hai
@@ -169,9 +170,9 @@ const forgetPassword = async(req,res)=>{
         res.status(200).json({message:`Email sent to ${user.email}`});
     } catch (error) {
         // Agar email fail ho jaye toh DB se token hata do
-        User.resetPasswordToken = undefined;
-        User.resetPasswordExpire = undefined;
-        await User.save({ validateBeforeSave: false });
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpire = undefined;
+        await user.save({ validateBeforeSave: false });
         
         res.status(500).json({ message: error.message });
     }
@@ -193,7 +194,7 @@ const resetPassword = async(req,res)=>{
         }
 
         // 3. Naya password set karo (pehle hash karo bcrypt se)
-        const salt = await bcrypt.salt(10)
+        const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(req.body.password,salt)
          // 4. Token fields ko hata do (kyuki ab kaam ho gaya)
         user.password = hashedPassword;
